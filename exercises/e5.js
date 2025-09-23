@@ -6,9 +6,13 @@ import { data } from "../data/data";
 
 export function getPlanetsWithMassValue(data, number) {
   // Your code goes here...
+  const planets = data.planets;
+  const massivePlanets = planets.filter(
+    (planet) => planet.mass.massValue >= number
+  );
+  const massivePlanetNames = massivePlanets.map((planet) => planet.name);
+  return massivePlanetNames;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"

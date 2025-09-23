@@ -6,9 +6,12 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
+  const planets = data.planets;
+  const planetWithMoon = planets.find((planet) =>
+    planet.moons?.some((moon) => moon === moonName)
+  );
+  return planetWithMoon ? planetWithMoon.name : null;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"
